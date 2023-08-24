@@ -11,7 +11,7 @@ const getToken = (user,email) => jwt.sign(
 )
 
 const userdetails = (req,res) => {
-    console.log(req);
+    console.log(req.session.isAuthorized);
     if(req.session.isAuthorized)
         res.status(200).send({
             isAuthorized: req.session.isAuthorized,
