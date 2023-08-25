@@ -18,11 +18,12 @@ const app = express();
 
 app.use(cors());
 app.use(express.static(path.resolve(__dirname,'../client/build')))
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+app.use(cookieParser());
 app.use(session({
   secret: 'sfjsk,akqklqkqkel',
-  saveUninitialized: false,
+  saveUninitialized: true,
   resave: false,
   cookie: {
     expires: 60 * 60 * 24,
