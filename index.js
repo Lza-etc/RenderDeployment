@@ -20,8 +20,11 @@ app.use(express.static(path.resolve(__dirname,'../client/build')))
 app.use(express.json())
 app.use(session({
   secret: 'sfjsk,akqklqkqkel',
-  saveUninitialized: true,
-  resave: true
+  saveUninitialized: false,
+  resave: false,
+  cookie: {
+    expires: 60 * 60 * 24,
+  },
 }))
 
 
