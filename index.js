@@ -7,7 +7,8 @@ const { loginuser,registeruser,reset, userdetails } = require('./controllers/use
 const { connect } = require('./config/database.js');
 const { addactivity, getactivity } = require('./controllers/activity.js');
 const {setbudget,getbudget} = require('./controllers/budget.js');
-const session = require('express-session');
+// const session = require('express-session');
+const session = require('cookie-session');
 const cors = require('cors')
 
 connect();
