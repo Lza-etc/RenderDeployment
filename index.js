@@ -16,7 +16,9 @@ const cors = require('cors');
 connect();
 const app = express();
 
-app.use(cors({credentials: true,origin:"*"}));
+app.use(cors({origin: 'http://localhost:3000',
+methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+credentials: true}));
 app.use(express.static(path.resolve(__dirname,'../client/build')))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
