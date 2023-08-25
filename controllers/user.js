@@ -68,7 +68,7 @@ const registeruser = async (req,res) => {
             req.session.userid = user._id
             req.session.token = user.token
             req.session.isAuthorized = true
-            req.session.save()
+          
             res.status(201).json('signed in')
         }    
     }catch(err){
