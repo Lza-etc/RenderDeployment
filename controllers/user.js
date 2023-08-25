@@ -35,10 +35,10 @@ const loginuser = async (req,res) => {
             user.token = getToken(user,email);
             
             req.session.userid = user._id
-            console.log(req.session.userid)
+            console.log("user id "+req.session.userid)
             req.session.token = user.token
             req.session.isAuthorized = true
-            console.log(req.session);
+            console.log("Session "+req.session);
             res.status(201).json(user._id);
         }else{
             res.status(200).send('invalid credentials');
