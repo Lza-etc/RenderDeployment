@@ -39,8 +39,11 @@ const loginuser = async (req,res) => {
             req.session.token = user.token
             req.session.isAuthorized = true
             console.log("Session "+req.session)
-            req.session.save()
-            res.status(201).json(user._id);
+            req.session.save((err) => {
+                console.log(err);
+                res.status(201).json(user._id);
+              });
+           
         }else{
             res.status(200).send('invalid credentials');
         }
