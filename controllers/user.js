@@ -12,6 +12,7 @@ const getToken = (user,email) => jwt.sign(
 
 const userdetails = (req,res) => {
     console.log(req.session);
+    console.log(req.session);
     if(req.session.isAuthorized)
         res.status(200).send({
             isAuthorized: req.session.isAuthorized,
@@ -38,7 +39,7 @@ const loginuser = async (req,res) => {
             req.session.token = user.token
             req.session.isAuthorized = true
             console.log(req.session);
-            res.status(201).json('logged in');
+            res.status(201).json(user._id);
         }else{
             res.status(200).send('invalid credentials');
         }
