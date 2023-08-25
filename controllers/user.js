@@ -38,7 +38,8 @@ const loginuser = async (req,res) => {
             console.log("user id "+req.session.userid)
             req.session.token = user.token
             req.session.isAuthorized = true
-            console.log("Session "+req.session);
+            console.log("Session "+req.session)
+            req.session.save()
             res.status(201).json(user._id);
         }else{
             res.status(200).send('invalid credentials');
@@ -65,6 +66,7 @@ const registeruser = async (req,res) => {
             req.session.userid = user._id
             req.session.token = user.token
             req.session.isAuthorized = true
+            req.session.save()
             res.status(201).json('signed in')
         }    
     }catch(err){
