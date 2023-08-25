@@ -32,7 +32,9 @@ const loginuser = async (req,res) => {
         const user = await User.findOne({email}).exec();
         if(user && await bcrypt.compare(password,user.password)){
             user.token = getToken(user,email);
+            
             req.session.userid = user._id
+            console.log(req.session.userid)
             req.session.token = user.token
             req.session.isAuthorized = true
             res.status(201).json('logged in');
