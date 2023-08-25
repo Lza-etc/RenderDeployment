@@ -10,7 +10,7 @@ const {setbudget,getbudget} = require('./controllers/budget.js');
 // const session = require('express-session');
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const session = require('express-session');
+const session = require('cookie-session');
 const cors = require('cors');
 
 connect();
