@@ -8,8 +8,10 @@ const { connect } = require('./config/database.js');
 const { addactivity, getactivity } = require('./controllers/activity.js');
 const {setbudget,getbudget} = require('./controllers/budget.js');
 // const session = require('express-session');
-const session = require('cookie-session');
-const cors = require('cors')
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require('express-session');
+const cors = require('cors');
 
 connect();
 const app = express();

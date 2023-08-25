@@ -24,7 +24,9 @@
   "homepage": "https://github.com/aish2002/budget-tracker#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "concurrently": "^6.2.2",
+    "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
