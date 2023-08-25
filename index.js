@@ -16,7 +16,7 @@ const cors = require('cors');
 connect();
 const app = express();
 
-app.use(cors({origin: 'http://localhost:3000',
+app.use(cors({origin: 'https://main--moneyflowtrack.netlify.app',
 methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
 credentials: true}));
 app.use(express.static(path.resolve(__dirname,'../client/build')))
